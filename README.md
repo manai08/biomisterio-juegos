@@ -2,6 +2,14 @@
 
 Sistema estático de seis cuestionarios de bioquímica. Cada partida contiene 10 preguntas, vale hasta 100 puntos y no solicita ni guarda información del estudiante.
 
+## Aventuras animadas
+
+Cada tema incluye una escena con un pequeño explorador: lava y salto entre rocas, burbujas de membrana, cadena que se pliega, piezas de un nucleótido, motivo de ADN y laboratorio de vitaminas. Al responder aparece un mensaje de ánimo, una reacción de acierto o de error y la retroalimentación científica original. Un error nunca lastima al personaje ni impide continuar después de leer la explicación.
+
+El botón «Animaciones: sí/no» cambia el movimiento durante la partida. Se respeta también la preferencia de movimiento reducido del dispositivo. Sin movimiento, la escena conserva su resultado y mensaje. No hay sonido ni destellos de pantalla.
+
+Las ilustraciones SVG y los mensajes de cada aventura están en `app.js`; sus movimientos están al final de `styles.css`, en el bloque «BioMisterio · escenas animadas, versión 2». Son ambientación lúdica, no simulaciones moleculares. No necesitan imágenes remotas ni paquetes externos.
+
 ## Archivos
 
 - `index.html`: entrada al sistema.
