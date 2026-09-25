@@ -1,2 +1,81 @@
 :root{font-family:Arial,Helvetica,sans-serif;color:#17333e;background:#f4f7f9;line-height:1.5;font-size:16px;--accent:#126963;--pale:#e6f5ef}*{box-sizing:border-box}body{margin:0}header{max-width:1160px;margin:auto;padding:25px 32px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #d9e2e5}a{color:inherit}.brand{font-size:27px;font-weight:850;letter-spacing:-1px;text-decoration:none}.brand span{font-weight:400}.brand .brand-dot{color:#347053;font-size:30px;margin-left:8px}.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#536b76}main{max-width:1160px;margin:auto;padding:32px}.intro{margin:5px 0 32px}.intro h1{white-space:pre-line;font-size:clamp(2rem,4vw,3.3rem);line-height:1.13;letter-spacing:-.045em;max-width:850px;margin:16px 0}.lead{font-size:1.05rem;color:#49616e;max-width:690px}.theme-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.theme-card{background:#fff;border:1px solid #d5e0e5;border-radius:18px;padding:25px;text-decoration:none;transition:transform .15s,border-color .15s}.theme-card:hover{transform:translateY(-3px);border-color:var(--accent)}.card-top,.card-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px}.theme-icon{background:var(--pale);color:var(--accent);width:54px;height:54px;display:inline-flex;align-items:center;justify-content:center;border-radius:16px;font-size:32px;flex-shrink:0}.theme-card h2{font-size:1.4rem;margin:21px 0 5px;letter-spacing:-.02em}.theme-card p{color:#506975;margin:0 0 25px}.card-bottom{border-top:1px solid #e5eaed;padding-top:17px;font-size:.8rem}.enter{color:var(--accent);font-weight:700;white-space:nowrap}.game-nav{display:flex;justify-content:space-between;gap:12px;margin-bottom:24px}.back{font-size:.95rem;text-underline-offset:4px}.game-heading{display:flex;align-items:center;gap:16px}.game-heading h1{font-size:clamp(1.65rem,3vw,2.5rem);line-height:1.15;letter-spacing:-.035em}.stats{display:flex;justify-content:space-between;gap:10px;margin:24px 0 10px}.score{color:var(--accent)}progress{width:100%;height:9px;border:0;border-radius:9px;accent-color:var(--accent)}progress::-webkit-progress-bar{background:#dfe6e9;border-radius:9px}progress::-webkit-progress-value{background:var(--accent);border-radius:9px}.journey{display:flex;justify-content:space-between;margin:17px 0 22px;padding:0 10px;gap:3px}.step{color:#b4c2ca;font-size:24px;transition:color .2s,transform .2s}.step.done{color:var(--accent);transform:translateY(-2px)}.question-panel{background:white;border:1px solid #d6e0e5;border-radius:20px;padding:30px;max-width:860px;margin:0 auto}.question{font-size:clamp(1.2rem,2.5vw,1.6rem);line-height:1.4;margin:12px 0 24px;letter-spacing:-.015em}.choices{display:grid;gap:12px}button{font:inherit;cursor:pointer}button:disabled{cursor:default}.option{width:100%;display:flex;align-items:center;text-align:left;gap:14px;background:#fff;color:#17333e;border:1px solid #bbcbd3;border-radius:12px;padding:16px;min-height:60px;line-height:1.5}.option:hover:not(:disabled){background:var(--pale);border-color:var(--accent)}.option-key{background:#edf2f5;border-radius:7px;padding:3px 10px;font-weight:700;flex-shrink:0}.option-text{flex:1}.option.correct{border:2px solid #237447;background:#ecf8ef}.option.incorrect{border:2px solid #b83d37;background:#fff1ef}.answer-symbol{font-size:22px;font-weight:700}.feedback:empty{display:none}.feedback{margin-top:20px;padding:20px;border-radius:12px;background:#edf4f7}.feedback p{margin:8px 0 0}.feedback.right strong{color:#21643e}.feedback.wrong strong{color:#a52b25}.primary{border:0;border-radius:12px;color:#fff;background:#173c49;padding:15px 24px;font-weight:700;min-height:52px;margin-top:24px}.primary:disabled{background:#dce4e8;color:#637681}.primary:hover:not(:disabled){background:#24586a}footer{text-align:center;color:#607782;font-size:.85rem;padding:28px 20px 36px}.result{text-align:center}.result h2{font-size:3rem;margin:15px 0;color:var(--accent)}.result .lead{margin:auto}.result .back{display:block;margin-top:22px}:focus-visible{outline:3px solid #246bae;outline-offset:4px}.notice{background:#ffedbe;padding:14px;border-radius:8px}@media(min-width:900px){main:has(.question-panel){max-width:960px}}@media(max-width:850px){.theme-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:540px){header{padding:18px 20px}header>.eyebrow{display:none}main{padding:22px 16px}.theme-grid{grid-template-columns:1fr;gap:14px}.theme-card{padding:22px}.intro h1{font-size:2.2rem}.game-nav{align-items:center}.game-nav .eyebrow{font-size:.75rem;letter-spacing:0}.game-heading{gap:12px}.game-heading .theme-icon{width:44px;height:44px}.question-panel{padding:21px 16px;border-radius:16px}.option{padding:14px 12px;gap:10px}.primary{width:100%}.stats{font-size:.9rem}.journey{padding:0}.step{font-size:20px}.eyebrow{font-size:.8rem}}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 .stats{position:sticky;top:0;z-index:5;background:#f4f7f9;padding:12px 0;margin-bottom:0;border-bottom:1px solid #d9e2e5}.question{scroll-margin-top:80px}.card-bottom{font-size:.875rem}
+
+/* BioMisterio · escenas animadas, versión 2 */
+.adventure{margin:0 0 22px;border:1px solid color-mix(in srgb,var(--accent) 24%,white);border-radius:16px;overflow:hidden;isolation:isolate;background:var(--pale);scroll-margin-top:70px}
+.scene-art{overflow:hidden;line-height:0;background:var(--pale)}
+.scene-art svg{display:block;width:100%;height:auto;max-height:210px;font-family:Arial,Helvetica,sans-serif}
+.adventure-message{padding:13px 18px 15px;line-height:1.4;color:#26404d;background:#ffffffb8}
+.adventure-message strong{font-size:1.1rem;display:block;color:var(--accent)}
+.adventure-message p{font-size:.9rem;margin:5px 0 0}
+.adventure[data-state=win] .adventure-message,.adventure[data-state=final] .adventure-message{background:#eef9f0}
+.adventure[data-state=win] .adventure-message strong,.adventure[data-state=final] .adventure-message strong{color:#22623a}
+.adventure[data-state=lose] .adventure-message{background:#fff3e7}
+.adventure[data-state=lose] .adventure-message strong{color:#97401e}
+.motion-control{font-size:.875rem;padding:8px 12px;min-height:44px;border:1px solid #bacbd3;border-radius:24px;background:white;color:#345464;white-space:nowrap}
+.game-nav{align-items:center;margin-bottom:10px}.game-heading h1{margin:12px 0}.journey{margin:10px 0 15px}.question{margin-bottom:17px}
+.adventure+.feedback{margin-top:-9px;margin-bottom:20px}.feedback{border-left:4px solid #7fa7b3}.feedback.right{border-left-color:#39985d}.feedback.wrong{border-left-color:#c57046}
+.adventure-mini{margin:0 -10px 15px;border:0;border-radius:11px;pointer-events:none}.adventure-mini .scene-art svg{max-height:none}.theme-card>p{margin-bottom:14px}.theme-card h2{margin-top:14px}
+.mascot{transform-box:fill-box;transform-origin:50% 100%}.arm{transform-box:fill-box;transform-origin:50% 0}
+.surprise,.lava-burst,.celebration,.chain-folded,.oops-mark,.lab-puff{opacity:0}
+.adventure[data-state=win] .celebration,.adventure[data-state=final] .celebration{opacity:1}
+.adventure[data-state=win] .arm-left,.adventure[data-state=final] .arm-left{transform:rotate(145deg)}
+.adventure[data-state=win] .arm-right,.adventure[data-state=final] .arm-right{transform:rotate(-145deg)}
+.adventure[data-state=lose] .smile{opacity:0}.adventure[data-state=lose] .surprise{opacity:1}
+.theme-carbohidratos[data-state=win] .traveller,.theme-lipidos[data-state=win] .traveller{transform:translateX(376px)}
+.adventure[data-state=lose] .lava-burst,.adventure[data-state=lose] .oops-mark,.adventure[data-state=lose] .lab-puff{opacity:1}
+.theme-lipidos .bubble-storm{opacity:.3}.theme-lipidos[data-state=lose] .bubble-storm{opacity:1}
+.theme-proteinas[data-state=win] .chain-open,.theme-proteinas[data-state=final] .chain-open{opacity:0}
+.theme-proteinas[data-state=win] .chain-folded,.theme-proteinas[data-state=final] .chain-folded{opacity:1}
+.assembly-lines{opacity:.15}.phosphate{transform:translate(-17px,-29px)}.sugar{transform:translateY(18px)}.base{transform:translate(17px,-26px)}
+.adventure[data-state=win] .assembly-token,.adventure[data-state=final] .assembly-token{transform:none}
+.adventure[data-state=win] .assembly-lines,.adventure[data-state=final] .assembly-lines{opacity:1}
+.base-pair{opacity:.18}.base-pair:nth-child(2),.base-pair:nth-child(3){opacity:1}
+.adventure[data-state=win] .base-pair,.adventure[data-state=final] .base-pair{opacity:1}
+.adventure[data-state=lose] .base-pair{opacity:.45}
+.lab-bubble{opacity:0}.adventure[data-state=win] .lab-bubble,.adventure[data-state=final] .lab-bubble{opacity:1}
+.liquid{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(.72)}
+.adventure[data-state=win] .liquid,.adventure[data-state=final] .liquid{transform:scaleY(1)}
+/* Finite, local animations. The final pose also communicates the outcome without movement. */
+.adventure[data-motion=true][data-state=win] .mascot,.adventure[data-motion=true][data-state=final] .mascot{animation:happy-hop .75s .18s 2 both}
+.theme-carbohidratos[data-motion=true][data-state=win] .traveller{animation:lava-jump 1.45s .18s both}
+.theme-carbohidratos[data-motion=true][data-state=win] .mascot{animation:land-cheer .6s 1.6s both}
+.theme-lipidos[data-motion=true][data-state=win] .traveller{animation:membrane-hop 1.45s .18s both}
+.theme-lipidos[data-motion=true][data-state=win] .mascot{animation:land-cheer .6s 1.6s both}
+.adventure[data-motion=true][data-state=lose] .mascot{animation:gentle-oops .6s .18s both}
+.adventure[data-motion=true][data-state=lose] .lava-burst{transform-origin:290px 163px;animation:lava-pop 1.4s .18s both}
+.adventure[data-motion=true][data-state=lose] .lava-ripple{animation:lava-wave .55s .18s 3}
+.adventure[data-motion=true][data-state=win] .confetti,.adventure[data-motion=true][data-state=final] .confetti{animation:sparkle 1.3s calc(.45s + var(--delay)) both;transform-box:fill-box;transform-origin:center}
+.adventure[data-motion=true][data-state=lose] .bubble{animation:bubble-rise 1.35s calc(.18s + var(--delay)) both}
+.adventure[data-motion=true][data-state=win] .chain-folded{animation:fold-reveal 1.2s .18s both;transform-box:fill-box;transform-origin:center}
+.adventure[data-motion=true][data-state=lose] .chain-open{animation:chain-wobble .6s .18s 2 both;transform-box:fill-box;transform-origin:center}
+.adventure[data-motion=true][data-state=win] .phosphate{animation:join-phosphate .95s .18s both}
+.adventure[data-motion=true][data-state=win] .sugar{animation:join-sugar .95s .18s both}
+.adventure[data-motion=true][data-state=win] .base{animation:join-base .95s .18s both}
+.adventure[data-motion=true][data-state=lose] .assembly-token{animation:token-tilt .6s .18s 2 both;transform-box:fill-box;transform-origin:center}
+.adventure[data-motion=true][data-state=win] .base-pair{animation:pair-reveal .65s calc(.18s + var(--delay)) both}
+.adventure[data-motion=true][data-state=lose] .helix{animation:chain-wobble .6s .18s 2 both;transform-box:fill-box;transform-origin:center}
+.adventure[data-motion=true][data-state=win] .liquid{animation:lab-fill 1s .18s both}
+.adventure[data-motion=true][data-state=win] .lab-bubble{animation:bubble-rise 1.1s calc(.4s + var(--delay)) 2 both}
+.adventure[data-motion=true][data-state=lose] .lab-puff{animation:puff 1.4s .18s both;transform-box:fill-box;transform-origin:center}
+@keyframes lava-jump{0%{transform:translate(0,0)}15%{transform:translate(12px,2px)}48%{transform:translate(181px,-40px)}60%{transform:translate(244px,-36px)}88%{transform:translate(376px,0)}94%{transform:translate(376px,3px)}100%{transform:translate(376px,0)}}
+@keyframes membrane-hop{0%{transform:translate(0,0)}40%{transform:translate(138px,-32px)}70%{transform:translate(275px,-23px)}100%{transform:translate(376px,0)}}
+@keyframes happy-hop{0%,100%{transform:translateY(0)}45%{transform:translateY(-17px) rotate(-4deg)}75%{transform:translateY(-6px) rotate(3deg)}}
+@keyframes land-cheer{0%,100%{transform:scale(1)}40%{transform:scale(1.06,.96)}}
+@keyframes gentle-oops{0%,100%{transform:rotate(0)}30%{transform:rotate(-7deg)}65%{transform:rotate(4deg)}}
+@keyframes lava-pop{0%{transform:scaleY(.1);opacity:0}35%{transform:scaleY(1);opacity:1}70%{transform:scaleY(.85)}100%{transform:scaleY(.72);opacity:1}}
+@keyframes lava-wave{50%{transform:translateY(-5px)}}
+@keyframes sparkle{0%{opacity:0;scale:.2}40%{opacity:1;scale:1.2}100%{opacity:.6;scale:1}}
+@keyframes bubble-rise{0%{opacity:0;transform:translateY(12px)}20%{opacity:1}100%{opacity:0;transform:translateY(-38px)}}
+@keyframes fold-reveal{0%{opacity:0;transform:scaleX(1.3) scaleY(.5)}100%{opacity:1;transform:scale(1)}}
+@keyframes chain-wobble{0%,100%{transform:rotate(0)}30%{transform:rotate(-4deg)}65%{transform:rotate(4deg)}}
+@keyframes join-phosphate{from{transform:translate(-17px,-29px)}to{transform:none}}
+@keyframes join-sugar{from{transform:translateY(18px)}to{transform:none}}
+@keyframes join-base{from{transform:translate(17px,-26px)}to{transform:none}}
+@keyframes token-tilt{0%,100%{rotate:0deg}40%{rotate:8deg}70%{rotate:-6deg}}
+@keyframes pair-reveal{from{opacity:.1;stroke-dasharray:0 100}to{opacity:1;stroke-dasharray:100 0}}
+@keyframes lab-fill{from{transform:scaleY(.4)}to{transform:scaleY(1)}}
+@keyframes puff{0%{opacity:0;transform:translateY(20px) scale(.3)}40%{opacity:.9;transform:translateY(-5px) scale(1)}100%{opacity:.65;transform:translateY(-15px) scale(1.1)}}
+.adventure[data-motion=false] *{animation:none!important;transition:none!important}
+@media(max-width:540px){.scene-art svg{min-height:115px}.adventure-message{padding:11px 13px}.adventure-message strong{font-size:1rem}.game-heading h1{font-size:1.55rem}.question-panel{padding-top:18px}.motion-control{padding:8px 10px;font-size:.8rem}.adventure{scroll-margin-top:64px}.adventure-mini .scene-art svg{min-height:0}}
+@media(prefers-reduced-motion:reduce){.adventure *{animation:none!important;transition:none!important}}
