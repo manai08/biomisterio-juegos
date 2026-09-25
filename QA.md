@@ -2,6 +2,17 @@
 
 Fecha: 25 de septiembre de 2026.
 
+## Actualización: aventuras animadas
+
+- Seis escenas vectoriales locales, con resultado visual de acierto y de error: 12 casos comprobados en Chrome a 390 × 844 px.
+- En cada caso: estado visual esperado, animaciones CSS correspondientes, cuatro opciones bloqueadas, retroalimentación científica intacta y sin desbordamiento horizontal.
+- Carbohidratos: el personaje aterriza en la segunda roca al acertar; al errar surge una llamarada central y el personaje permanece en la primera roca.
+- El botón de animaciones desactiva todos los movimientos sin cambiar puntos ni resultado; la preferencia se conserva al avanzar y repetir durante esa partida. También se incluye `prefers-reduced-motion`.
+- Comprobada selección de respuesta con Enter.
+- Banco de preguntas idéntico al anterior: SHA-256 C33B7A997DA75D91C697A9FEDBD1F3C14B6ABD263AE3F5B2161F274F86FB9229.
+- Las 18 partidas automáticas del motor siguen pasando.
+- La comprobación desde un teléfono físico sigue pendiente; estas pruebas utilizan tamaño móvil en una computadora.
+
 ## Banco y motor — aprobados
 
 - 60 preguntas extraídas del documento mediante XML; diez por tema. Enunciados, alternativas, claves y retroalimentaciones conservados, separando únicamente los rótulos del formato original.
@@ -25,4 +36,4 @@ La prueba de tamaño móvil se ejecutó en una computadora. **No equivale a una 
 
 ## Datos y recursos
 
-No hay formularios de identificación, almacenamiento de puntuaciones, backend ni solicitudes de la aplicación a APIs externas. HTML, CSS, JavaScript e icono se cargan localmente desde el mismo alojamiento. No hay recursos de Quizizz/Wayground/Educaplay. Los motivos de progreso son abstractos y no representan estructuras moleculares.
+No hay formularios de identificación, almacenamiento de puntuaciones, backend ni solicitudes de la aplicación a APIs externas. HTML, CSS, JavaScript, icono y escenas SVG se cargan localmente desde el mismo alojamiento. No hay recursos de Quizizz/Wayground/Educaplay. Las escenas son ambientación lúdica y no simulan procesos moleculares.
