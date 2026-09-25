@@ -26,4 +26,4 @@ El respaldo contiene todo el código, los recursos y las instrucciones. Consulte
 - 18 partidas automáticas del motor verificaron los seis temas con resultados de 0, 50 y 100 puntos.
 - **Teléfono físico Android/iPhone: pendiente.** La emulación de dimensiones en una computadora no certifica esa prueba. Para cerrar este punto, abrir los siete enlaces desde el teléfono, responder en cada tema y completar/repetir una partida. Registrar modelo, navegador y resultado.
 
-La ficha 75 de Genially no fue editada: se entregan los destinos para sus botones. Los motivos gráficos del sitio son abstractos; no representan moléculas ni simulan procesos bioquímicos.
+La ficha 75 de Genially no fue editada: se entregan los destinos para sus botones. La versión animada conserva todos los enlaces e incorpora escenas lúdicas propias por tema, mensajes de ánimo y un control de movimiento. Las escenas no simulan procesos bioquímicos.
