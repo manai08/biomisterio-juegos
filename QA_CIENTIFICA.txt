@@ -1,0 +1,21 @@
+REVISIÓN CIENTÍFICA INDEPENDIENTE — 12 octubre 2026, 05:57 UTC
+Alcance: banco C11–C16, SVG C11/C12/C13/C14/C16 y metadatos estructurales.
+Método: lectura de SVG y banco; render de cada SVG con Inkscape instalado; inspección visual de las cinco PNG.
+Resultado: favorable. No se modificaron figuras ni banco durante esta revisión.
+C11: anillos, carbonos, oxígeno, sustituyentes y configuración de α-D-glucopiranosa y β-D-ribofuranosa correctos.
+C12: Fischer A R/L/R/R; B L/R/L/L; C L/L/R/R de C2 a C5; CHO y CH2OH terminales correctos.
+C13: fragmento I C1(α)–O–C4; fragmento II C1(β)–N9; conectividad y alcance parcial correctos.
+C14: aldehído a carboxilo / aldehído a alcohol primario correctamente representados.
+C15: respuesta teórica Tollens/fructosa correcta; sin gráfico requerido.
+C16: condensación formal e hidrólisis de maltosa coherentes con el pie de simplificación.
+Claves C11–C16: B, C, D, A, B, C. Cuatro retroalimentaciones específicas por pregunta.
+Accesibilidad: metadatos estructurales equivalentes a las figuras e integrados en questions.js; no nombran las respuestas de C11/C12.
+Límite: no se certifica el funcionamiento ni el diseño de la interfaz en navegador. Los originales CAR-01–10 no se reauditan íntegramente aquí.
+Archivos revisados (SHA-256):
+questions.js: ce46f94f24cfd63caea7a785709b0c7c723ce8bbbbd744b30ea6f8215c0b3e9a
+figuras-meta.json: 5f37f595d8c5f1f8e7b79f1ada978b732807aa26922c011bba630d5c7dfe9201
+figures/C11.svg: fc1089310d873af2902b983dd987d2b2cef6dc90ae2a7818cb4aa7ce011274ce
+figures/C12.svg: b5c75a49f24bf9a45b94cbd24b59e624cc94ce9c273bc30929735dd4ced657ed
+figures/C13.svg: 2776be789fab0a6c559706e3269297413d972282bb34bac6e5c4e295ae93cef3
+figures/C14.svg: 8af6eaaf4ca2c989b3cb8ff0494450afc052cea5607ccfa2dcb85d0abf6c2cf3
+figures/C16.svg: 230a22a4efd287c3af00750be8c2d0cfdf337c46b2e75ab985c509de817015fc

@@ -1,0 +1,27 @@
+{
+  "C11": {
+    "alt": "Estructuras A y B en proyección de Haworth; consulta la descripción estructural para las posiciones de sus sustituyentes.",
+    "caption": "Proyecciones de Haworth. Se omiten los H unidos a C; cada H queda opuesto al sustituyente mostrado. El CH₂OH está fuera del anillo.",
+    "description": "A: anillo de cinco C y un O, con O arriba a la derecha; C1 a la derecha, C2 abajo a la derecha, C3 abajo a la izquierda, C4 a la izquierda y C5 arriba a la izquierda. OH de C1 abajo, OH de C2 abajo, OH de C3 arriba y OH de C4 abajo; CH₂OH de C5 arriba. B: anillo de cuatro C y un O, con O arriba; C1 a la derecha, C2 abajo a la derecha, C3 abajo a la izquierda y C4 a la izquierda. OH de C1 arriba, OH de C2 y C3 abajo; CH₂OH de C4 arriba. En ambas estructuras los H de cada centro quedan al lado opuesto de los sustituyentes indicados."
+  },
+  "C12": {
+    "alt": "Tres proyecciones de Fischer A, B y C, con CHO arriba y CH₂OH abajo; posiciones detalladas en la descripción.",
+    "caption": "Proyecciones de Fischer en la misma orientación. Cada cruce representa un carbono de C2 a C5.",
+    "description": "Las tres estructuras tienen CHO arriba y CH₂OH abajo. En A, los OH de C2, C3, C4 y C5 están, respectivamente, a la derecha, izquierda, derecha y derecha. En B están a la izquierda, derecha, izquierda e izquierda. En C están a la izquierda, izquierda, derecha y derecha. En cada cruce, H está en el lado contrario al OH. Cada estructura tiene seis carbonos."
+  },
+  "C13": {
+    "alt": "Fragmentos I y II de conectividad; el texto siguiente reproduce ambos.",
+    "caption": "Fragmentos del enlace: diagramas parciales de conectividad, no estructuras moleculares completas.",
+    "description": "I: C1 anomérico (α) de una unidad de glucosa — O — C4 de otra unidad de glucosa. II: C1 anomérico (β) de una unidad de ribosa — N9 de adenina, sin O intermedio."
+  },
+  "C14": {
+    "alt": "Cambio I: R–CHO a R–COOH. Cambio II: R–CHO a R–CH₂OH.",
+    "caption": "Cambios del grupo terminal de una aldosa; R representa el resto de su cadena, que se conserva. Son esquemas parciales, no ecuaciones ajustadas.",
+    "description": "Cambio I: R–CHO → R–COOH. Cambio II: R–CHO → R–CH₂OH. El resto R se conserva en todos los casos."
+  },
+  "C16": {
+    "alt": "Esquema I: glucosa más glucosa a maltosa más agua. Esquema II: maltosa más agua a glucosa más glucosa.",
+    "caption": "Esquemas globales simplificados; no representan el mecanismo de una vía biosintética.",
+    "description": "I: glucosa + glucosa → maltosa + agua. II: maltosa + agua → glucosa + glucosa."
+  }
+}

@@ -79,3 +79,17 @@
 .adventure[data-motion=false] *{animation:none!important;transition:none!important}
 @media(max-width:540px){.scene-art svg{min-height:115px}.adventure-message{padding:11px 13px}.adventure-message strong{font-size:1rem}.game-heading h1{font-size:1.55rem}.question-panel{padding-top:18px}.motion-control{padding:8px 10px;font-size:.8rem}.adventure{scroll-margin-top:64px}.adventure-mini .scene-art svg{min-height:0}}
 @media(prefers-reduced-motion:reduce){.adventure *{animation:none!important;transition:none!important}}
+
+
+/* Figuras científicas de C11–C16: se conservan el diseño y las escenas existentes. */
+.question-figure { margin: 1rem 0; padding: 1rem; border: 1px solid #d5dfdf; border-radius: 14px; background: #fff; }
+.question-figure > img { display: block; width: 100%; height: auto; }
+.question-figure > img[hidden] { display: none; }
+.question-figure figcaption, .figure-description { font-size: .9rem; line-height: 1.5; margin-top: .75rem; }
+.figure-enlarge { margin-top: .75rem; padding: .6rem .9rem; border: 1px solid currentColor; border-radius: 8px; color: inherit; background: #fff; cursor: pointer; }
+.figure-dialog { width: min(1100px, 95vw); max-height: 92vh; border: 1px solid #d5dfdf; border-radius: 14px; padding: 1rem; }
+.figure-dialog::backdrop { background: #173e49aa; }
+.figure-scroll { overflow: auto; max-height: 65vh; margin-top: 1rem; }
+.figure-scroll img { width: 1050px; max-width: none; height: auto; display: block; }
+.figure-description summary { cursor: pointer; }
+.journey { flex-wrap: wrap; }

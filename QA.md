@@ -37,3 +37,38 @@ La prueba de tamaño móvil se ejecutó en una computadora. **No equivale a una 
 ## Datos y recursos
 
 No hay formularios de identificación, almacenamiento de puntuaciones, backend ni solicitudes de la aplicación a APIs externas. HTML, CSS, JavaScript, icono y escenas SVG se cargan localmente desde el mismo alojamiento. No hay recursos de Quizizz/Wayground/Educaplay. Las escenas son ambientación lúdica y no simulan procesos moleculares.
+
+
+
+## Ampliación de Carbohidratos: revisión local del 12 de octubre de 2026
+
+Estado: código editado localmente; no publicado ni desplegado.
+
+### Pruebas ejecutadas
+
+- `node tests/engine.cjs`: 66 preguntas totales; 16 de Carbohidratos y 10 en cada uno de los cinco temas restantes; 18 partidas completas con 100/0/50 puntos; bloqueo de doble respuesta, avance y reinicio; claves estables tras invertir opciones; 24 feedback específicos; rechazo de bancos incompletos. Checksum de los 60 objetos originales conservado.
+- `node tests/interface.cjs`: contrato de interfaz con DOM simulado, 16 pantallas, 24 feedback, bloqueo de opciones, resultado, reinicio, cierre del diálogo y retorno del foco. Cinco fallos simulados de imagen muestran una descripción estructural equivalente, por lo que los reactivos siguen disponibles y no se registran como errores de carga del estudiante. Los otros cinco temas conservan 10 preguntas y +10 puntos por acierto.
+- Sintaxis JavaScript verificada con `node --check`.
+- Los estilos originales y las seis escenas decorativas se conservan; únicamente se añade un bloque CSS para las nuevas figuras y el ajuste de la ruta de 16 pasos. Los recursos de RA no se han modificado.
+
+### Puntaje
+
+`100 × aciertos / preguntas disponibles`, redondeado a dos decimales. Los 16 reactivos siempre tienen representación visual o descripción equivalente. Se muestra 6,25 puntos por acierto; no se introduce umbral de aprobado.
+
+### Comprobaciones pendientes antes de publicación
+
+La revisión visual de la interfaz en un navegador real está pendiente. Chromium no pudo iniciarse desde el entorno de ejecución por restricción de sockets; el navegador cloud no pudo abrir el servidor local y su política no permite URLs file://. No se publicó el código para sortear estas limitaciones.
+
+Quedan pendientes las capturas finales, legibilidad y desbordamientos de las nuevas figuras en escritorio y pantalla móvil, interacción real con teclado y cierre Escape, navegación atrás/adelante y prueba en teléfono físico. Las pruebas DOM no sustituyen estas comprobaciones. Abrir localmente index.html o ejecutar el servidor explicado en README.md y completar esa revisión antes de aprobar publicación.
+
+
+## Revisión final de 71 preguntas: 12 octubre 2026
+
+- Banco: carbohidratos16, lípidos15 y cuatro temas10. 59 objetos originales idénticos; LÍP-04 solo campos aprobados. C11–C16 idénticos al paquete confirmado. Orden fijo.
+- Motor: 18 partidas, bloqueo/reinicio, 71 claves y 48 feedback. Lípidos8/15=53,33; 15/15=100.
+- DOM: 16 pantallas de carbohidratos, 15 de lípidos, 48 feedback, siete fallos de figura con descripción equivalente, diálogo/foco.
+- Chrome390×844: carbohidratos16/16=100; lípidos14/15=93,33 con error deliberado en LÍP-14. Figuras cargadas, opciones bloqueadas, teclado, Escape, retorno de foco y reinicio a pregunta1 y 0 puntos.
+- Chrome1366×900: C12 y LÍP-15 revisados; lípidos15/15=100. Sin desbordamiento en pantallas medidas:375/390 móvil,1366/1366 escritorio. Sin errores de consola en recorridos registrados.
+- Dos SVG nuevos: valencias C4/O2/N3; ambas cadenas C18H34O2; geometrías Z/E. Sin nombres de soluciones en rótulos/texto accesible.
+- Capturas en ../capturas y revisión global ../revision-final.html.
+- Teléfono físico y RA con cámara/tarjeta: pendientes. Sin publicar.
