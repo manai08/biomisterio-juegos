@@ -1,6 +1,6 @@
 # BioMisterio
 
-Sistema estático de seis cuestionarios de bioquímica. Cada partida contiene 10 preguntas, vale hasta 100 puntos y no solicita ni guarda información del estudiante.
+Sistema estático de seis cuestionarios de bioquímica. Carbohidratos contiene 16 preguntas, Lípidos 15 y cada uno de los otros cuatro temas 10: 71 preguntas en total. Cada partida vale hasta 100 puntos y no solicita ni guarda información del estudiante.
 
 ## Aventuras animadas
 
@@ -13,7 +13,7 @@ Las ilustraciones SVG y los mensajes de cada aventura están en `app.js`; sus mo
 ## Archivos
 
 - `index.html`: entrada al sistema.
-- `questions.js`: 60 preguntas, opciones, claves y retroalimentaciones extraídas literalmente del Anexo A de Guia_Codex_BioMisterio.docx.
+- `questions.js`: 60 preguntas originales conservadas y seis preguntas integradoras C11–C16 de Carbohidratos; opciones, claves y retroalimentaciones.
 - `game-engine.js`: reglas compartidas y validación del banco.
 - `app.js`: menú, temas e interfaz.
 - `styles.css`: diseño adaptable y colores.
@@ -33,7 +33,7 @@ Abre `http://localhost:8000/`. Las rutas usan `?tema=carbohidratos`, `?tema=lipi
 
 ## Modificar preguntas
 
-Haz una copia antes de editar. Abre `questions.js` con un editor de texto UTF-8. Busca el identificador de la pregunta (por ejemplo CAR-01). `question` contiene el enunciado; cada opción conserva una `key` A/B/C/D y su `text`; `correct` señala la clave y `feedback` contiene la explicación. Modifica contenido científico solo después de una revisión humana. No cambies una clave sin revisar las opciones. Conserva 10 preguntas por tema, cuatro opciones distintas por clave y una sola respuesta correcta. El orden visual es fijo en esta versión.
+Haz una copia antes de editar. Abre `questions.js` con un editor de texto UTF-8. Busca el identificador de la pregunta (por ejemplo CAR-01). `question` contiene el enunciado; cada opción conserva una `key` A/B/C/D y su `text`; `correct` señala la clave y `feedback` contiene la explicación. Modifica contenido científico solo después de una revisión humana. No cambies una clave sin revisar las opciones. Conserva 16 preguntas en Carbohidratos, 15 en Lípidos y 10 en los otros cuatro temas, cuatro opciones distintas por clave y una sola respuesta correcta. El orden visual es fijo en esta versión.
 
 Ejecuta `node tests/engine.cjs` si tienes Node.js. Abre los seis temas y prueba respuestas correctas e incorrectas. El programa impide comenzar cuando el banco no pasa su validación.
 
@@ -56,3 +56,21 @@ No se incluyen credenciales ni dependencias de Quizizz, Wayground o Educaplay. L
 
 Consulta `ENTREGA.md` para los enlaces de publicación y su estado. Consulta `QA.md` para distinguir pruebas de escritorio, pantalla móvil y teléfono físico.
 
+
+
+## Ampliación de Carbohidratos (copia para revisión)
+
+Las figuras científicas están en `figures/`. Se amplían con el botón «Ampliar figura», que admite cierre con Escape. Si falla una imagen, se muestra automáticamente una descripción estructural equivalente; el estudiante puede responder con ella sin penalización por el fallo de carga.
+
+El puntaje se calcula como `100 × aciertos / preguntas disponibles` y se redondea a dos decimales; Carbohidratos dispone de 16 reactivos (6,25 puntos por acierto). No se añade ningún umbral de aprobación. Las claves y el feedback específico se vinculan a la clave estable A/B/C/D, independientemente del orden de opciones.
+
+Esta copia no publica automáticamente ningún cambio.
+
+
+## Revisión final local: 71 preguntas
+
+LÍP-11–15 y la precisión de LÍP-04 se implementaron con el texto aprobado. Las otras 59 preguntas originales conservan sus objetos exactos; C11–C16 se mantienen como en el paquete confirmado. figures/LIP14.svg y figures/LIP15.svg son diagramas deterministas con valencias verificadas y rótulos sin nombres de las respuestas. Opciones A/B/C/D sin barajado.
+
+Puntuación total: 100 × aciertos / preguntas, redondeada a dos decimales. En lípidos se muestran 6,67 puntos por acierto como valor redondeado; el total se calcula desde el número de aciertos y no sumando incrementos redondeados.
+
+Pruebas: node tests/engine.cjs y node tests/interface.cjs. QA real de Chrome móvil/escritorio completada; teléfono físico pendiente. Copia para revisión, sin publicar.

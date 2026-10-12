@@ -106,36 +106,54 @@ const root=document.querySelector('#app');
 const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
 let game,theme;
 function button(text,cls,fn){const b=el('button',cls,text);b.type='button';b.onclick=fn;return b;}
+function makeQuestionFigure(figure) {
+  const box=el('figure','question-figure');
+  const image=el('img');image.src=figure.src;image.alt=figure.alt;
+  const caption=el('figcaption','',figure.caption);
+  const detail=el('details','figure-description');detail.append(el('summary','','Descripción de la figura'),el('p','',figure.description));
+  const enlarge=button('Ampliar figura','figure-enlarge',()=>{
+    const dialog=el('dialog','figure-dialog');
+    const close=button('Cerrar ampliación','primary',()=>dialog.close());
+    const full=el('img');full.src=figure.src;full.alt=figure.alt;
+    const scroll=el('div','figure-scroll');scroll.append(full);
+    dialog.append(close,scroll,el('p','',figure.caption));document.body.append(dialog);
+    dialog.addEventListener('close',()=>{dialog.remove();enlarge.focus();},{once:true});dialog.showModal();
+  });
+  image.addEventListener('error',()=>{image.hidden=true;enlarge.hidden=true;detail.open=true;caption.textContent='La figura no se pudo cargar. Usa esta descripción estructural equivalente para responder.';});
+  box.append(image,caption,enlarge,detail);return box;
+}
+const formatPoints=value=>String(Math.round(value*100)/100).replace('.',',');
 function menu(message){
   document.title='BioMisterio · Desafíos de bioquímica';root.replaceChildren();root.removeAttribute('style');
   if(message)root.append(el('p','notice',message));
   const intro=el('section','intro');
-  intro.append(el('p','eyebrow','SEIS TEMAS · UN NUEVO RETO'),el('h1','','La ciencia guarda misterios.\nResuelve el siguiente.'),el('p','lead','Elige una expedición. Responde 10 preguntas y descubre la explicación después de cada respuesta.'));
+  intro.append(el('p','eyebrow','SEIS TEMAS · UN NUEVO RETO'),el('h1','','La ciencia guarda misterios.\nResuelve el siguiente.'),el('p','lead','Elige una expedición. Responde las preguntas y descubre la explicación después de cada respuesta.'));
   root.append(intro);const grid=el('div','theme-grid');
   themes.forEach((t,i)=>{
     const a=el('a','theme-card');a.href='?tema='+t.id;a.style.setProperty('--accent',t.color);a.style.setProperty('--pale',t.pale);
     const top=el('div','card-top');top.append(el('span','theme-icon',t.icon),el('span','eyebrow','0'+(i+1)));
     theme=t;a.append(top,el('h2','',t.name),el('p','',t.title),makeAdventure('idle',true));
-    const bottom=el('div','card-bottom');bottom.append(el('span','','10 preguntas · 100 puntos'),el('span','enter','Entrar ↗'));a.append(bottom);grid.append(a);
+    const bottom=el('div','card-bottom');bottom.append(el('span','',`${BIO_QUESTIONS.filter(q=>q.theme===t.id).length} preguntas · 100 puntos`),el('span','enter','Entrar ↗'));a.append(bottom);grid.append(a);
   });root.append(grid);
 }
 function render(focus=false, revealAnswer=false){
   root.replaceChildren();root.style.setProperty('--accent',theme.color);root.style.setProperty('--pale',theme.pale);document.title=theme.name+' · BioMisterio';
   const nav=el('div','game-nav'),back=el('a','back','← Elegir otro tema');back.href='?';nav.append(back,motionButton());root.append(nav);
   const heading=el('div','game-heading');heading.append(el('span','theme-icon',theme.icon),el('h1','',theme.title));root.append(heading);
-  const stats=el('div','stats');stats.append(el('span','',game.finished?'Desafío completado':`Pregunta ${game.index+1} de 10`),el('strong','score',`${game.score} / 100 puntos`));root.append(stats);
-  const progress=el('progress');progress.max=10;progress.value=game.answers.length;progress.setAttribute('aria-label','Preguntas respondidas');root.append(progress);
-  const path=el('div','journey');path.setAttribute('aria-label',`${game.answers.length} preguntas respondidas de 10`);
-  for(let i=0;i<10;i++){const a=game.answers[i],step=el('span','step'+(a?' done':''),a?(a.correct?'★':'●'):'○');step.setAttribute('aria-hidden','true');path.append(step);}root.append(path);
+  const stats=el('div','stats');stats.append(el('span','',game.finished?'Desafío completado':`Pregunta ${game.index+1} de ${game.questions.length}`),el('strong','score',`${formatPoints(game.score)} / 100 puntos`));root.append(stats);
+  const progress=el('progress');progress.max=game.questions.length;progress.value=game.answers.length;progress.setAttribute('aria-label','Preguntas respondidas');root.append(progress);
+  const path=el('div','journey');path.setAttribute('aria-label',`${game.answers.length} preguntas respondidas de ${game.questions.length}`);
+  for(let i=0;i<game.questions.length;i++){const a=game.answers[i],step=el('span','step'+(a?' done':''),a?(a.correct?'★':'●'):'○');step.setAttribute('aria-hidden','true');path.append(step);}root.append(path);
   if(game.finished){
-    const panel=el('section','question-panel result');panel.append(makeAdventure('final'),el('p','eyebrow','EXPEDICIÓN COMPLETADA'),el('h2','',`${game.score} puntos`),el('p','lead',`${game.score/10} aciertos de 10 preguntas.`),el('p','','Cada explicación es una nueva pista. Puedes volver a intentarlo cuando quieras.'),button('Repetir desafío','primary',()=>{game.reset();render(true);}));
+    const panel=el('section','question-panel result');panel.append(makeAdventure('final'),el('p','eyebrow','EXPEDICIÓN COMPLETADA'),el('h2','',`${formatPoints(game.score)} puntos`),el('p','lead',`${game.correctCount} aciertos de ${game.questions.length} preguntas.`),el('p','','Cada explicación es una nueva pista. Puedes volver a intentarlo cuando quieras.'),button('Repetir desafío','primary',()=>{game.reset();render(true);}));
     const other=el('a','back','Elegir otro tema');other.href='?';panel.append(other);root.append(panel);if(focus){panel.tabIndex=-1;panel.focus();}return;
   }
   const q=game.current,answered=game.selected!==null,right=game.selected===q.correct;
   const panel=el('section','question-panel');panel.append(el('p','eyebrow',q.tag));const h=el('h2','question',q.question);h.tabIndex=-1;panel.append(h);
+  if(q.figure)panel.append(makeQuestionFigure(q.figure));
   const scene=makeAdventure(answered?(right?'win':'lose'):'idle');panel.append(scene);
   const feedback=el('div','feedback');feedback.setAttribute('role','status');
-  if(answered){feedback.classList.add(right?'right':'wrong');feedback.append(el('strong','',right?'✓ ¡Correcto! +10 puntos':'✕ Esta vez no. +0 puntos'),el('p','',q.feedback));panel.append(feedback);}
+  if(answered){feedback.classList.add(right?'right':'wrong');feedback.append(el('strong','',right?`✓ ¡Correcto! +${formatPoints(100/game.questions.length)} puntos`:'✕ Esta vez no. +0 puntos'),el('p','',q.optionFeedback?.[game.selected] || q.feedback));panel.append(feedback);}
   const choices=el('div','choices');
   q.options.forEach(o=>{
     const b=button('','option',()=>{if(game.answer(o.key))render(false,true);});b.disabled=answered;
@@ -144,7 +162,7 @@ function render(focus=false, revealAnswer=false){
     else if(answered&&o.key===game.selected){b.classList.add('incorrect');b.append(el('span','answer-symbol','✕'));b.setAttribute('aria-label',o.key+'. '+o.text+' Tu respuesta, incorrecta');}
     choices.append(b);
   });panel.append(choices);
-  const next=button(game.index===9?'Ver resultado':'Siguiente →','primary',()=>{if(game.next())render(true);});next.disabled=!answered;panel.append(next);root.append(panel);
+  const next=button(game.index===game.questions.length-1?'Ver resultado':'Siguiente →','primary',()=>{if(game.next())render(true);});next.disabled=!answered;panel.append(next);root.append(panel);
   if(revealAnswer){
     // Place the scene and explanation in view, including after long options on phones.
     const message=scene.querySelector('.adventure-message');message.focus({preventScroll:true});
@@ -157,3 +175,4 @@ try{
   if(theme){game=new BioGame(BIO_QUESTIONS.filter(q=>q.theme===id));render();}
   else menu(id?'Ese tema no existe. Elige uno de los seis desafíos.':null);
 }catch(error){root.replaceChildren(el('h1','','No se puede iniciar el desafío'),el('p','','El banco de preguntas no pasó la validación. Revisa questions.js antes de publicar.'));console.error(error);}
+
