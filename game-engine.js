@@ -1,7 +1,7 @@
 'use strict';
 window.BioGame = class {
   static validate(bank, themes) {
-    const counts = Object.fromEntries(themes.map(theme => [theme, theme === 'carbohidratos' ? 16 : theme === 'lipidos' ? 15 : 10]));
+    const counts = Object.fromEntries(themes.map(theme => [theme, theme === 'carbohidratos' ? 16 : theme === 'lipidos' ? 15 : theme === 'proteinas' ? 11 : 10]));
     const total = Object.values(counts).reduce((sum, count) => sum + count, 0);
     if (!Array.isArray(bank) || bank.length !== total || new Set(bank.map(q=>q.id)).size !== total) throw Error(`Se requieren ${total} preguntas únicas.`);
     for (const theme of themes) if (bank.filter(q=>q.theme===theme).length!==counts[theme]) throw Error(`El tema ${theme} debe tener ${counts[theme]} preguntas.`);
@@ -15,3 +15,4 @@ window.BioGame = class {
   answer(key) { if(this.selected!==null || this.finished || !this.current.options.some(o=>o.key===key)) return false; this.selected=key; const correct=key===this.current.correct; this.answers.push({id:this.current.id,key,correct}); return true; }
   next() { if(this.selected===null || this.finished)return false; if(this.index===this.questions.length-1)this.finished=true; else {this.index++;this.selected=null;} return true; }
 };
+

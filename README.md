@@ -1,6 +1,6 @@
 # BioMisterio
 
-Sistema estático de seis cuestionarios de bioquímica. Carbohidratos contiene 16 preguntas, Lípidos 15 y cada uno de los otros cuatro temas 10: 71 preguntas en total. Cada partida vale hasta 100 puntos y no solicita ni guarda información del estudiante.
+Sistema estático de seis cuestionarios de bioquímica. Carbohidratos contiene 16 preguntas, Lípidos 15, Proteínas 11 y cada uno de los otros tres temas 10: 72 preguntas en total. Cada partida vale hasta 100 puntos y no solicita ni guarda información del estudiante.
 
 ## Aventuras animadas
 
@@ -33,7 +33,7 @@ Abre `http://localhost:8000/`. Las rutas usan `?tema=carbohidratos`, `?tema=lipi
 
 ## Modificar preguntas
 
-Haz una copia antes de editar. Abre `questions.js` con un editor de texto UTF-8. Busca el identificador de la pregunta (por ejemplo CAR-01). `question` contiene el enunciado; cada opción conserva una `key` A/B/C/D y su `text`; `correct` señala la clave y `feedback` contiene la explicación. Modifica contenido científico solo después de una revisión humana. No cambies una clave sin revisar las opciones. Conserva 16 preguntas en Carbohidratos, 15 en Lípidos y 10 en los otros cuatro temas, cuatro opciones distintas por clave y una sola respuesta correcta. El orden visual es fijo en esta versión.
+Haz una copia antes de editar. Abre `questions.js` con un editor de texto UTF-8. Busca el identificador de la pregunta (por ejemplo CAR-01). `question` contiene el enunciado; cada opción conserva una `key` A/B/C/D y su `text`; `correct` señala la clave y `feedback` contiene la explicación. Modifica contenido científico solo después de una revisión humana. No cambies una clave sin revisar las opciones. Conserva 16 preguntas en Carbohidratos, 15 en Lípidos, 11 en Proteínas y 10 en los otros tres temas, cuatro opciones distintas por clave y una sola respuesta correcta. El orden visual es fijo en esta versión.
 
 Ejecuta `node tests/engine.cjs` si tienes Node.js. Abre los seis temas y prueba respuestas correctas e incorrectas. El programa impide comenzar cuando el banco no pasa su validación.
 
@@ -74,3 +74,8 @@ LÍP-11–15 y la precisión de LÍP-04 se implementaron con el texto aprobado. 
 Puntuación total: 100 × aciertos / preguntas, redondeada a dos decimales. En lípidos se muestran 6,67 puntos por acierto como valor redondeado; el total se calcula desde el número de aciertos y no sumando incrementos redondeados.
 
 Pruebas: node tests/engine.cjs y node tests/interface.cjs. QA real de Chrome móvil/escritorio completada; teléfono físico pendiente. Copia para revisión, sin publicar.
+
+
+## Ampliación de Proteínas: PRO11
+
+Se incorpora al final del tema una pregunta aprobada sobre pH, conformación y actividad enzimática con secuencia intacta, con cuatro explicaciones específicas. Proteínas contiene 11 preguntas. El puntaje es proporcional al número de aciertos; 9,09 por respuesta es solo el valor mostrado redondeado, y 11 aciertos dan 100 puntos. No se modifican los estilos, las escenas ni los otros reactivos.

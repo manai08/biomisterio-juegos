@@ -1,0 +1,32 @@
+{
+  "id": "PRO11",
+  "theme": "proteinas",
+  "question": "Una enzima pierde actividad en un medio muy ácido, pero conserva su secuencia de aminoácidos. ¿Qué puede explicar esa pérdida?",
+  "options": [
+    {
+      "key": "A",
+      "text": "Se rompieron todos sus enlaces peptídicos."
+    },
+    {
+      "key": "B",
+      "text": "Su estructura primaria se convirtió en cuaternaria."
+    },
+    {
+      "key": "C",
+      "text": "Si conserva su secuencia, necesariamente conserva su actividad."
+    },
+    {
+      "key": "D",
+      "text": "El pH alteró interacciones y la conformación del sitio activo, sin cambiar la secuencia."
+    }
+  ],
+  "correct": "D",
+  "feedback": "El pH puede alterar las interacciones que mantienen la conformación de la enzima y el estado de sus grupos del sitio activo, disminuyendo su actividad sin modificar la secuencia de aminoácidos. Esta observación no demuestra que el cambio sea irreversible.",
+  "optionFeedback": {
+    "A": "Romper los enlaces peptídicos fragmentaría la cadena, lo que es incompatible con la conservación de la secuencia de aminoácidos descrita en el caso.",
+    "B": "Los niveles de estructura describen aspectos distintos de la organización de una proteína; la estructura primaria no se convierte en cuaternaria.",
+    "C": "La actividad depende de la conformación de la enzima y de las condiciones del medio, además de su secuencia de aminoácidos.",
+    "D": "Correcto. El pH puede alterar interacciones y grupos del sitio activo, modificando la conformación y la actividad sin cambiar la secuencia. Esto no implica necesariamente un cambio irreversible."
+  },
+  "tag": "pH y actividad enzimática"
+}
