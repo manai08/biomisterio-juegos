@@ -66,3 +66,23 @@ for(let i=0;i<11;i++){
 assert.match(prot.root.textContent,/11 aciertos de 11 preguntas/);assert.match(prot.root.textContent,/100 puntos/);
 prot.root.querySelectorAll('button').find(b=>b.textContent==='Repetir desafío').onclick();assert.match(prot.root.textContent,/Pregunta 1 de 11/);assert.equal(prot.run('game.score'),0);
 console.log('PASS: DOM proteínas: 11 pantallas, cuatro feedback PRO11, bloqueo, resultado 100 y repetición.');
+
+const nuc=boot('nucleotidos');
+for(let i=0;i<10;i++){
+ const q=nuc.run('game.current');
+ if(q.id==='NUC-07'){
+  assert.ok(nuc.root.textContent.includes("En el AMP no cíclico, ¿cómo se denomina el enlace entre el fosfato y el O5′ de la ribosa?"));
+  for(const option of q.options){
+   nuc.run('game.selected=null;game.answers=game.answers.slice(0,game.index);');
+   nuc.run("game.answer('"+option.key+"');render();");
+   assert.ok(nuc.root.textContent.includes(q.feedback));
+   assert.equal(nuc.root.querySelectorAll('.option').every(b=>b.disabled),true);
+  }
+ }
+ nuc.run('game.selected=null;game.answers=game.answers.slice(0,game.index);game.answer(game.current.correct);game.next();render();');
+}
+assert.match(nuc.root.textContent,/10 aciertos de 10 preguntas/);
+assert.match(nuc.root.textContent,/100 puntos/);
+nuc.root.querySelectorAll('button').find(b=>b.textContent==='Repetir desafío').onclick();
+assert.match(nuc.root.textContent,/Pregunta 1 de 10/);
+console.log('PASS: DOM nucleótidos: NUC-07 preciso, cuatro opciones con feedback, resultado 100 y repetición.');

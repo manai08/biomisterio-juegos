@@ -1388,7 +1388,7 @@ window.BIO_QUESTIONS = [
   {
     "id": "NUC-07",
     "theme": "nucleotidos",
-    "question": "Cuando una pentosa está unida a un único grupo fosfato, ¿cómo se denomina el enlace entre ambos?",
+    "question": "En el AMP no cíclico, ¿cómo se denomina el enlace entre el fosfato y el O5′ de la ribosa?",
     "options": [
       {
         "key": "A",

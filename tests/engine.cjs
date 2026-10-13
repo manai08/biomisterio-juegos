@@ -13,7 +13,7 @@ let feedback=0;for(const q of bank.filter(q=>q.optionFeedback)){assert.equal(Obj
 assert.equal(feedback,52);
 assert.throws(()=>Game.validate(bank.slice(1),ids));assert.throws(()=>Game.validate(bank.map((q,i)=>i?q:{...q,correct:'Z'}),ids));
 const original=JSON.parse(fs.readFileSync(__dirname+'/original-bank.json','utf8'));
-for(const q of original)if(q.id!=='LÍP-04')assert.deepEqual(JSON.parse(JSON.stringify(bank.find(x=>x.id===q.id))),q,q.id);
+for(const q of original)if(q.id!=='LÍP-04'&&q.id!=='NUC-07')assert.deepEqual(JSON.parse(JSON.stringify(bank.find(x=>x.id===q.id))),q,q.id);
 const approval=JSON.parse(fs.readFileSync(__dirname+'/lipidos-aprobados.json','utf8'));
 const old=original.find(x=>x.id==='LÍP-04'),updated=bank.find(x=>x.id==='LÍP-04');
 for(const k of ['question','id','theme','correct','tag'])assert.equal(updated[k],old[k]);
@@ -21,7 +21,7 @@ for(const key of ['A','C','D'])assert.deepEqual(JSON.parse(JSON.stringify(update
 assert.equal(updated.options.find(x=>x.key==='B').text,approval.correction.optionB);assert.equal(updated.feedback,approval.correction.feedback);assert.deepEqual(JSON.parse(JSON.stringify(updated.optionFeedback)),approval.correction.optionFeedback);
 for(const approved of approval.adds){const q=bank.find(x=>x.id===approved.id);assert.equal(q.question,approved.question);assert.equal(q.correct,approved.correct);for(let i=0;i<4;i++){assert.equal(q.options[i].key,'ABCD'[i]);assert.equal(q.options[i].text,approved.options[i]);assert.equal(q.optionFeedback['ABCD'[i]],approved.feedback[i]);}}
 console.log('PASS: 72 preguntas, 18 partidas, puntuación proporcional (mixta de lípidos 53,33), bloqueo, reinicio, 72 claves estables, 52 feedback y rechazo de banco inválido.');
-console.log('PASS: 59 preguntas originales idénticas; LÍP-04 solo cambios aprobados; cinco incorporaciones idénticas al texto aprobado; orden A/B/C/D fijo.');
+console.log('PASS: 58 preguntas originales idénticas; LÍP-04 y NUC-07 solo cambios aprobados; cinco incorporaciones idénticas al texto aprobado; orden A/B/C/D fijo.');
 
 
 const approvedProtein=JSON.parse(fs.readFileSync(__dirname+'/proteina-aprobada.json','utf8'));
@@ -32,3 +32,8 @@ const proteinGame=new Game(bank.filter(q=>q.theme==='proteinas'));
 for(let i=0;i<11;i++){proteinGame.answer(proteinGame.current.correct);assert.equal(proteinGame.score,Math.round(10000*(i+1)/11)/100);proteinGame.next();}
 assert.equal(proteinGame.score,100);
 console.log('PASS: PRO11 coincide con la pregunta aprobada, al final del tema, sin duplicados; 11 aciertos producen 100 puntos.');
+
+const nucOld=original.find(q=>q.id==='NUC-07'),nucNew=JSON.parse(JSON.stringify(bank.find(q=>q.id==='NUC-07')));
+assert.equal(nucNew.question,"En el AMP no cíclico, ¿cómo se denomina el enlace entre el fosfato y el O5′ de la ribosa?");
+assert.deepEqual({...nucNew,question:nucOld.question},nucOld);
+console.log('PASS: NUC-07 solo cambia el enunciado aprobado; opciones, clave y feedback intactos.');
